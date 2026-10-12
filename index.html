@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A collection of simple tools for conversions, marks, multiplication tables, and number checks."
+    />
+    <title>Smart Utility | Everyday tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Smart Utility home">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>smart<span class="brand-light">utility</span></span>
+        </a>
+        <div class="theme-controls" aria-label="Theme controls">
+          <span class="theme-label">Appearance</span>
+          <button class="theme-button" id="light-theme" type="button" aria-pressed="true">
+            <span aria-hidden="true">☀</span> Light
+          </button>
+          <button class="theme-button" id="dark-theme" type="button" aria-pressed="false">
+            <span aria-hidden="true">☾</span> Dark
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR EVERYDAY TOOLKIT</p>
+            <h1 id="page-title">Small tools.<br /><span>Big help.</span></h1>
+            <p class="hero-description">
+              Handy calculators and converters, all in one calm little space.
+            </p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <span class="art-orbit orbit-one"></span>
+            <span class="art-orbit orbit-two"></span>
+            <span class="art-spark spark-one">✳</span>
+            <span class="art-spark spark-two">✦</span>
+            <div class="art-card">
+              <span class="art-card-icon">↗</span>
+              <span class="art-card-line"></span>
+              <span class="art-card-line short"></span>
+              <span class="art-card-value">42<span>%</span></span>
+              <span class="art-card-caption">smart results</span>
+            </div>
+            <span class="art-bubble bubble-one">°C</span>
+            <span class="art-bubble bubble-two">×</span>
+          </div>
+        </section>
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PICK A TOOL</p>
+            <h2>What can we help with?</h2>
+          </div>
+          <p class="tool-count"><span>05</span> useful utilities</p>
+        </div>
+
+        <section class="tools-grid" aria-label="Utility tools">
+          <article class="tool-card converter-card">
+            <div class="card-heading">
+              <span class="tool-icon icon-blue" aria-hidden="true">⇄</span>
+              <div>
+                <p class="card-kicker">QUICK CONVERT</p>
+                <h3>Unit converter</h3>
+              </div>
+              <span class="card-number">01</span>
+            </div>
+            <form id="converter-form" novalidate>
+              <label for="conversion-type">Conversion type</label>
+              <select id="conversion-type" name="conversion-type">
+                <option value="c-to-f">Celsius → Fahrenheit</option>
+                <option value="f-to-c">Fahrenheit → Celsius</option>
+                <option value="m-to-km">Meter → Kilometer</option>
+                <option value="km-to-m">Kilometer → Meter</option>
+                <option value="m-to-in">Meter → Inches</option>
+                <option value="pkr-to-usd">PKR → USD</option>
+                <option value="usd-to-pkr">USD → PKR</option>
+              </select>
+              <label for="conversion-value">Value to convert</label>
+              <div class="input-with-unit">
+                <input
+                  id="conversion-value"
+                  name="conversion-value"
+                  type="number"
+                  step="any"
+                  placeholder="e.g. 25"
+                  inputmode="decimal"
+                  required
+                />
+                <span class="input-unit" id="conversion-unit">°C</span>
+              </div>
+              <button class="primary-button" type="submit">
+                Convert value <span aria-hidden="true">↗</span>
+              </button>
+            </form>
+            <p class="message error-message" id="converter-error" role="alert"></p>
+            <div class="result-box" id="converter-result" aria-live="polite">
+              <span class="result-label">YOUR RESULT</span>
+              <span class="result-value" id="conversion-output">—</span>
+            </div>
+            <p class="fine-print">Currency uses a static rate of 1 USD = 280 PKR.</p>
+          </article>
+
+          <article class="tool-card marks-card">
+            <div class="card-heading">
+              <span class="tool-icon icon-orange" aria-hidden="true">▤</span>
+              <div>
+                <p class="card-kicker">STUDY SMARTER</p>
+                <h3>Marks calculator</h3>
+              </div>
+              <span class="card-number">02</span>
+            </div>
+            <form id="marks-form" novalidate>
+              <p class="field-intro">Enter each subject mark <span>· out of 100</span></p>
+              <div class="marks-grid">
+                <label>Subject 01<input name="mark" type="number" min="0" max="100" step="any" placeholder="0–100" required /></label>
+                <label>Subject 02<input name="mark" type="number" min="0" max="100" step="any" placeholder="0–100" required /></label>
+                <label>Subject 03<input name="mark" type="number" min="0" max="100" step="any" placeholder="0–100" required /></label>
+                <label>Subject 04<input name="mark" type="number" min="0" max="100" step="any" placeholder="0–100" required /></label>
+                <label>Subject 05<input name="mark" type="number" min="0" max="100" step="any" placeholder="0–100" required /></label>
+              </div>
+              <button class="primary-button" type="submit">
+                Calculate grade <span aria-hidden="true">↗</span>
+              </button>
+            </form>
+            <p class="message error-message" id="marks-error" role="alert"></p>
+            <div class="result-box marks-result" id="marks-result" aria-live="polite">
+              <div><span class="result-label">TOTAL</span><span class="result-value" id="marks-total">—</span></div>
+              <div><span class="result-label">PERCENTAGE</span><span class="result-value" id="marks-percentage">—</span></div>
+              <div><span class="result-label">GRADE</span><span class="grade-value" id="marks-grade">—</span></div>
+            </div>
+          </article>
+
+          <article class="tool-card table-card">
+            <div class="card-heading">
+              <span class="tool-icon icon-green" aria-hidden="true">×</span>
+              <div>
+                <p class="card-kicker">MULTIPLY IN A SNAP</p>
+                <h3>Times table</h3>
+              </div>
+              <span class="card-number">03</span>
+            </div>
+            <form id="table-form" novalidate>
+              <label for="table-number">Enter a number</label>
+              <div class="inline-form">
+                <input id="table-number" type="number" step="any" inputmode="decimal" placeholder="e.g. 7" required />
+                <button class="primary-button" type="submit">Generate <span aria-hidden="true">↗</span></button>
+              </div>
+            </form>
+            <p class="message error-message" id="table-error" role="alert"></p>
+            <div class="table-output" id="table-output" aria-live="polite">
+              <p class="empty-state">Your 1–10 times table will appear here.</p>
+            </div>
+          </article>
+
+          <article class="tool-card checker-card">
+            <div class="card-heading">
+              <span class="tool-icon icon-purple" aria-hidden="true">#</span>
+              <div>
+                <p class="card-kicker">GET TO KNOW A NUMBER</p>
+                <h3>Number checker</h3>
+              </div>
+              <span class="card-number">04</span>
+            </div>
+            <form id="checker-form" novalidate>
+              <label for="check-number">Enter a whole number</label>
+              <div class="inline-form">
+                <input id="check-number" type="number" step="1" inputmode="numeric" placeholder="e.g. 13" required />
+                <button class="primary-button" type="submit">Check it <span aria-hidden="true">↗</span></button>
+              </div>
+            </form>
+            <p class="message error-message" id="checker-error" role="alert"></p>
+            <div class="checker-results" id="checker-results" aria-live="polite">
+              <div class="check-result">
+                <span class="check-symbol" aria-hidden="true">◐</span>
+                <span><small>EVEN OR ODD</small><strong id="parity-result">—</strong></span>
+              </div>
+              <div class="check-result">
+                <span class="check-symbol" aria-hidden="true">✳</span>
+                <span><small>PRIME STATUS</small><strong id="prime-result">—</strong></span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span class="footer-mark">S</span>
+        <span>Made for the little calculations in life.</span>
+        <span class="footer-year">SMART UTILITY <span>·</span> 2026</span>
+      </footer>
+    </div>
+  </body>
+</html>
